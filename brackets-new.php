@@ -312,7 +312,6 @@ function makeDiv(rnd, position, team, bracketdata, bracketology) {
 	var personId = currentPersonId;
 	var id = rnd + '_' + position;
 	var display = (rnd == 64) ? "inline" : "none";
-	var champLink = " ";
 
 	var picksLink = '';
 	var setGameTimeLink = '';
@@ -364,46 +363,76 @@ function makeDiv(rnd, position, team, bracketdata, bracketology) {
 		var team = findTeamInBracketology(bracketology, teamname);
 		
 		// Generate the logo for each round, if a team is set
-		var logoSrc = (team.teamId != '?') ? "http://a.espncdn.com/i/teamlogos/ncaa/50x50/" + team.teamId + ".png" : "";
-		logoImg = "<img id=\"logo_" + id + "\" style=\"display:none\" src=\"" + logoSrc + "\" border=\"0\">";
+        logoImg = buildLogoImg(id, team);
 
 		teamname = team.teamName;
 		if (rnd == 64) {
-			bgcolor = "white";
+			//bgcolor = "white";
 		}
-		standings = " (" + team.record + ")";
+		standings = buildStandingsSpan(id, team);
 		espnLink = " <a class=\"espnLink\" target=\"_blank\" href=\"http://sports.espn.go.com/ncb/clubhouse?event=tourney&teamId=" + team.teamId + "\">espn</a>";
-		seed = team.seed + " ";
+        seed = buildSeedSpan(id, team);
 	} else if (rnd == 64) {
 		// Generate the logo for each round, if a team is set
-		var logoSrc = (team.teamId != '?') ? "http://a.espncdn.com/i/teamlogos/ncaa/50x50/" + team.teamId + ".png" : "";
-		logoImg = "<img id=\"logo_" + id + "\" style=\"display:none\" src=\"" + logoSrc + "\" border=\"0\">";
+        logoImg = buildLogoImg(id, team);
 		
 		teamname = team.teamName;
 		bgcolor = "white";
-		standings = " (" + team.record + ")";
+		standings = buildStandingsSpan(id, team);
 		espnLink = " <a class=\"espnLink\" target=\"_blank\" href=\"http://sports.espn.go.com/ncb/clubhouse?event=tourney&teamId=" + team.teamId + "\">espn</a>";
-		seed = team.seed + " ";
+        seed = buildSeedSpan(id, team);
 	} else {
 		teamname = "";
 		altText  = "<span id=\"unset_" + id + "\">UNSET!</span>";
 		bgcolor = "red";
-		logoImg = "<img id=\"logo_" + id + "\" style=\"display:none\" src=\"\" border=\"0\">";
+        var fakeTeam = {teamId: '?'};
+		standings = buildStandingsSpan(id, fakeTeam);
+        logoImg = buildLogoImg(id, fakeTeam);
+        seed = buildSeedSpan(id, team);
 	}
 
-	var scoreDiv = "";
-	if (score > 0) {
-		scoreDiv = "<div style=\"text-transform: none;\">(" + score + "pts)</div>";
-	}
-
+	var scoreDiv = buildScoreDiv(score);
 	var teamabbr = team.teamAbbreviation; 
-	//var retVal = "<div id=\"div_" + id + "\" style=\"background-color: " + bgcolor + "\">";
+	var retVal = buildTeamDiv(id, cssClass, teamname, seed, altText, standings, logoImg, espnLink, scoreDiv, picksLink, setGameTimeLink);
+	return retVal;
+}
+
+function buildTeamDiv(id, cssClass, teamname, seed, altText, standings, logoImg, espnLink, scoreDiv, picksLink, setGameTimeLink) {
 	var retVal = "<div id=\"div_" + id + "\" class=\"" + cssClass + "\">";
 	retVal += "<input type=\"hidden\" name=\"game_" + id + "\" id=\"game_" + id + "\" value=\"" + teamname + "\">" + seed + "<a id=\"lnk_" + id + "\" href=\"javascript:advance('" + id + "');void(0);\">" + teamname + "</a>";
-	retVal += altText + champLink + standings + logoImg + espnLink;
+	retVal += altText + standings + logoImg + espnLink;
 	retVal += "</div>" + scoreDiv + picksLink + setGameTimeLink;
+    return retVal;
+}
 
-	return retVal;
+function buildStandingsSpan(id, team) {
+    var standings = '';
+    if (team && team['record']) {
+        standings = ' (' + team.record + ')';
+    }
+    return "<span id=\"standings_" + id + "\">" + standings + "</span>";
+}
+
+function buildSeedSpan(id, team) {
+    var seed = '';
+    if (team && team['seed']) {
+        seed = team.seed + " ";
+    }
+    return "<span id=\"seed_" + id + "\">" + seed + "</span>";
+}
+
+function buildScoreDiv(score) {
+    var retVal = "";
+    if (score > 0) {
+        retVal = "<div style=\"text-transform: none;\">(" + score + "pts)</div>";
+    }
+    return retVal;
+}
+
+function buildLogoImg(id, team) {
+	var logoSrc = (team.teamId != '?') ? "http://a.espncdn.com/i/teamlogos/ncaa/50x50/" + team.teamId + ".png" : "";
+	var logoImg = "<a id=\"imglnk_" + id + "\" href=\"javascript:advance('" + id + "');void(0);\">" + "<img id=\"logo_" + id + "\" style=\"display:none\" src=\"" + logoSrc + "\" border=\"0\"></a>";
+    return logoImg;
 }
 
 function findTeamInBracketology(bracketology, teamName) {
@@ -645,7 +674,12 @@ function advance(theId, goAllTheWay, challengeText) {
 	lsrLnk = document.getElementById('lnk_'+loserId);
 	srcLnk = document.getElementById('lnk_'+theId);
 	srcLogo = document.getElementById('logo_'+theId);
+    srcStandings = $('#standings_' + theId);
+    dstStandings = $('#standings_' + destId);
+    srcSeed = $('#seed_' + theId);
+    dstSeed = $('#seed_' + destId);
 	dstLnk = document.getElementById('lnk_'+destId);
+	dstImgLnk = document.getElementById('imglnk_'+destId);
 	dstGam = document.getElementById('game_'+destId);
 	dstUnset = document.getElementById('unset_'+destId);
 	dstContainer = document.getElementById('div_'+destId);
@@ -690,8 +724,10 @@ function advance(theId, goAllTheWay, challengeText) {
 			});
 		
 		dstLnk.innerHTML = srcLnk.innerHTML;
+        dstImgLnk.href = dstLnk.href;
 		dstGam.value = srcLnk.innerHTML;
-		//chmpLnk.style.display = "inline";
+        dstStandings.html(srcStandings.html());
+        dstSeed.html(srcSeed.html());
 		
 		
 		if (typeof(goAllTheWay) != 'undefined' && goAllTheWay) {
