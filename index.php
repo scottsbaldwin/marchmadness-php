@@ -27,6 +27,7 @@ if ($_POST['login'] && $_POST['loginPersonId'] && $_POST['loginBirthDay']) {
 		$auth = 1;
 		$_SESSION['mm_auth'] = 1; // this tells the session that we have a valid login
 		$_SESSION['mm_personId'] = $loginPersonId; // this is the current logged in person
+        Header("Location: /marchmadness");
 	} else {
 		// Person not found!
 		$auth = 0;
