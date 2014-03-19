@@ -1,0 +1,10 @@
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^rest/.*$ rest.php
+
+Options -MultiViews
+RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteBase /marchmadness
+RewriteRule ^rest/.*$ rest.php

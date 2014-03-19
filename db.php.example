@@ -1,0 +1,21 @@
+<?php
+$dbconfigDev = array(
+	"host" => ":/Applications/MAMP/tmp/mysql/mysql.sock",
+	"username" => "root",
+	"password" => "root",
+	"dbname" => "mm"
+);
+
+$dbconfigProd = array(
+	"host" => "",
+	"username" => "",
+	"password" => "",
+	"dbname" => ""
+);
+
+if ($_SERVER["SERVER_NAME"] != "localhost") {
+	$GLOBALS["dbconfig"] = $dbconfigProd;
+} else {
+	$GLOBALS["dbconfig"] = $dbconfigDev;
+}
+?>
