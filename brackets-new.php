@@ -32,6 +32,7 @@ $pastCutoff = $now >= $cutoff;
 <script type="text/javascript">
 var currentPersonId = <?php print ($GLOBALS['personId']) ? $GLOBALS['personId'] : $mm_personId; ?>;
 var isAdmin = <?php print ($mm_personId == 3 || $mm_personId == 9) ? 1 : 0; ?>;
+
 var baseurl = '/marchmadness/rest';
 var scoreBoardData = null;
 
