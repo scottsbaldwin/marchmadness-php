@@ -644,7 +644,7 @@ $tabTeams2014 = "
 4	Louisville	29-5	97	LVILLE
 13	Manhattan	25-7	2363	MANH
 6	UMass	24-8	113	UMASS
-11	?	?	?	?
+11	Tennessee	21-12	2633	TENN
 3	Duke	26-8	150	DUKE
 14	Mercer	26-8	2382	MERCER
 7	Texas	23-10	251	TEXAS
