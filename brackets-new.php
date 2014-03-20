@@ -361,6 +361,9 @@ function makeDiv(rnd, position, team, bracketdata, bracketology) {
 		// We have to look up the team first to get the id
 		// if we are in a round after the first round
 		var team = findTeamInBracketology(bracketology, teamname);
+        if (team == null) {
+            team = {teamId: '?', teamName: '?'}
+        }
 		
 		// Generate the logo for each round, if a team is set
         logoImg = buildLogoImg(id, team);
