@@ -430,6 +430,9 @@ function buildScoreDiv(score) {
 }
 
 function buildLogoImg(id, team) {
+    if (team == null) {
+        team = {teamId: '?'}
+    }
 	var logoSrc = (team.teamId != '?') ? "http://a.espncdn.com/i/teamlogos/ncaa/50x50/" + team.teamId + ".png" : "";
 	var logoImg = "<a id=\"imglnk_" + id + "\" href=\"javascript:advance('" + id + "');void(0);\">" + "<img id=\"logo_" + id + "\" style=\"display:none\" src=\"" + logoSrc + "\" border=\"0\"></a>";
     return logoImg;
