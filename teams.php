@@ -636,7 +636,7 @@ $tabTeams2014 = "
 15	American	20-12	44	AMER
 
 1	Wichita St	34-0	2724	WICHST
-16	?	?	?	?
+16	Cal Poly	13-19	13	CPOLY
 8	Kentucky	24-10	96	UK
 9	Kansas St	20-12	2306	KSTATE
 5	St Louis	26-6	139	STLOU
