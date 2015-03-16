@@ -8,7 +8,7 @@ $mm_personId = $_SESSION['mm_personId'];
 $isAdmin = ($mm_personId == 3 || $mm_personId == 9) ? 1 : 0;
 $isSuperUser = ($mm_personId == 3) ? 1 : 0;
 $personId = $GLOBALS['personId'];
-$personId = ($personId) ? $personId : $mm_personId;	
+$personId = ($personId) ? $personId : $mm_personId;
 
 //$cutoff = mktime(1, 40, 0, 3, 17, 2006); // 13 hours ahead of EST
 //$cutoff = mktime(12, 20, 0, 3, 15, 2007); // Server is EST
@@ -18,7 +18,8 @@ $personId = ($personId) ? $personId : $mm_personId;
 //$cutoff = mktime(12, 15, 0, 3, 17, 2011); // Server is EST
 //$cutoff = mktime(12, 15, 0, 3, 15, 2012); // Server is EST
 //$cutoff = mktime(12, 15, 0, 3, 21, 2013); // Server is EST
-$cutoff = mktime(12, 15, 0, 3, 20, 2014); // Server is EST
+//$cutoff = mktime(12, 15, 0, 3, 20, 2014); // Server is EST
+$cutoff = mktime(12, 15, 0, 3, 19, 2015); // Server is EST
 
 /*
 if ($personId == 21) {
@@ -72,7 +73,7 @@ function buildScoreBoard(splitByAge) {
 		// "score":"2","possibleScore":"12","nrUnsetGames":"57","isOverEleven":"1",
 		// "finalpick":null,"score2006":118,"score2007":178,"score2008":200,"score2009":158}
 		var tableTop = '<table class="scoreboard" cellpadding="3" cellspacing="1"><tr><td class="header">Name</td><td class="header">Total Score</td><td class="header">Possible Score*</td><td class="header">Champion Pick</td><td class="header">Nr Unset Games**</td>';
-		tableTop += '<td class="header">Average Score</td>';
+		//tableTop += '<td class="header">Average Score</td>';
 		//tableTop += '<td class="header">2010 Final Score</td><td class="header">2009 Final Score</td><td class="header">2008 Final Score</td><td class="header">2007 Final Score</td><td class="header">2006 Final Score</td>';
 		tableTop += '<td class="header">Cheer Board</td></tr>'; 
 		var t1 = tableTop;
@@ -88,7 +89,7 @@ function buildScoreBoard(splitByAge) {
 			tr += '<td class="' + cssClass + '" align="right">' + row.possibleScore + '</td>';
 			tr += '<td class="' + cssClass + '" align="center">' + (row.finalpick != null && row.finalpick != '' ? row.finalpick : '') + '</td>';
 			tr += '<td class="' + cssClass + '" align="center">' + row.nrUnsetGames + '</td>';
-			tr += '<td class="' + cssClass + '" align="center">' + (row.scoreAverage != null ? row.scoreAverage : 0) + '</td>';
+			//tr += '<td class="' + cssClass + '" align="center">' + (row.scoreAverage != null ? row.scoreAverage : 0) + '</td>';
 			//tr += '<td class="' + cssClass + '" align="center">' + (row.score2010 != null ? row.score2010 : 0) + '</td>';
 			//tr += '<td class="' + cssClass + '" align="center">' + (row.score2009 != null ? row.score2009 : 0) + '</td>';
 			//tr += '<td class="' + cssClass + '" align="center">' + (row.score2008 != null ? row.score2008 : 0) + '</td>';

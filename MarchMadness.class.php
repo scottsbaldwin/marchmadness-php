@@ -352,7 +352,9 @@ order by score desc, possibleScore desc, FM.birthDate asc
 			$row["score2010"] = $GLOBALS["scores2010"]["personId_".$myrow["personId"]];
 			$row["score2011"] = $GLOBALS["scores2011"]["personId_".$myrow["personId"]];
 			$row["score2012"] = $GLOBALS["scores2012"]["personId_".$myrow["personId"]];
-			$row["scoreAverage"] = round(($row["score2006"] + $row["score2007"] + $row["score2008"] + $row["score2009"] + $row["score2010"] + $row["score2011"] + $row["score2012"]) / 7);
+			$row["score2013"] = $GLOBALS["scores2013"]["personId_".$myrow["personId"]];
+			$row["score2014"] = $GLOBALS["scores2014"]["personId_".$myrow["personId"]];
+			$row["scoreAverage"] = round(($row["score2006"] + $row["score2007"] + $row["score2008"] + $row["score2009"] + $row["score2010"] + $row["score2011"] + $row["score2012"] + $row["score2013"] + $row["score2014"]) / 9);
 			
 			array_push($rowData, $row);
 		}
