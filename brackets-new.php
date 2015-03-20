@@ -19,7 +19,8 @@ $personId = ($personId) ? $personId : $mm_personId;
 //$cutoff = mktime(12, 15, 0, 3, 15, 2012); // Server is EST
 //$cutoff = mktime(12, 15, 0, 3, 21, 2013); // Server is EST
 //$cutoff = mktime(12, 15, 0, 3, 20, 2014); // Server is EST
-$cutoff = mktime(12, 15, 0, 3, 19, 2015); // Server is EST
+//$cutoff = mktime(12, 15, 0, 3, 19, 2015); // Server is EST
+$cutoff = mktime(23, 59, 59, 3, 19, 2015); // Server is EST
 
 /*
 if ($personId == 21) {

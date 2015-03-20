@@ -674,23 +674,6 @@ $tabTeams2015 = "
 2	Kansas	26-8	2305	KANSAS
 15	New Mexico St	23-10	166	NMEXST
 
-1	Villanova	32-2	222	NOVA
-16	Lafayette	20-12	322	??
-8	NC State	20-13	152	NCST
-9	LSU	22-10	99	LSU
-5	Northern Iowa	30-3	2460	NIA
-12	Wyoming	25-9	2751	??
-4	Louisville	24-8	97	LVILLE
-13	UC Irvine	21-12	300	??
-6	Providence	22-11	2507	PROV
-11	??	??	??	??
-3	Oklahoma	22-10	201	OKLA
-14	Albany	24-8	399	ALBANY
-7	Michigan St	23-11	127	MIST
-10	Georgia	21-11	61	GA
-2	Virginia	29-3	258	UVA
-15	Belmont	22-10	2057	BEL
-
 1	Wisconsin	31-3	275	WISC
 16	Coastal Carol	24-9	324	??
 8	Oregon	25-9	2483	OREG
@@ -708,8 +691,25 @@ $tabTeams2015 = "
 2	Arizona	31-3	12	AZ
 15	Texas Southern	22-12	2640	??
 
+1	Villanova	32-2	222	NOVA
+16	Lafayette	20-12	322	??
+8	NC State	20-13	152	NCST
+9	LSU	22-10	99	LSU
+5	Northern Iowa	30-3	2460	NIA
+12	Wyoming	25-9	2751	??
+4	Louisville	24-8	97	LVILLE
+13	UC Irvine	21-12	300	??
+6	Providence	22-11	2507	PROV
+11	Dayton	26-8	2168	DAY
+3	Oklahoma	22-10	201	OKLA
+14	Albany	24-8	399	ALBANY
+7	Michigan St	23-11	127	MIST
+10	Georgia	21-11	61	GA
+2	Virginia	29-3	258	UVA
+15	Belmont	22-10	2057	BEL
+
 1	Duke	29-4	150	DUKE
-16	??	??	??	??
+16	Robert Morris	20-14	2523	ROB
 8	San Diego St	26-8	21	SDSU
 9	St Johns	21-11	2599	??
 5	Utah	24-8	254	UT
