@@ -76,7 +76,9 @@ function buildScoreBoard(splitByAge) {
 		var tableTop = '<table class="scoreboard" cellpadding="3" cellspacing="1"><tr><td class="header">Name</td><td class="header">Total Score</td><td class="header">Possible Score*</td><td class="header">Champion Pick</td><td class="header">Nr Unset Games**</td>';
 		//tableTop += '<td class="header">Average Score</td>';
 		//tableTop += '<td class="header">2010 Final Score</td><td class="header">2009 Final Score</td><td class="header">2008 Final Score</td><td class="header">2007 Final Score</td><td class="header">2006 Final Score</td>';
-		tableTop += '<td class="header">Cheer Board</td></tr>'; 
+        //tableTop += '<td class="header">Cheer Board</td></tr>';
+		tableTop += '</tr>';
+
 		var t1 = tableTop;
 		var t2 = tableTop;
 		for(i=0;i<scoreBoardData.length;i++) {
@@ -96,7 +98,7 @@ function buildScoreBoard(splitByAge) {
 			//tr += '<td class="' + cssClass + '" align="center">' + (row.score2008 != null ? row.score2008 : 0) + '</td>';
 			//tr += '<td class="' + cssClass + '" align="center">' + (row.score2007 != null ? row.score2007 : 0) + '</td>';
 			//tr += '<td class="' + cssClass + '" align="center">' + (row.score2006 != null ? row.score2006 : 0) + '</td>';
-			tr += '<td class="' + cssClass + '" align="center"><a href="javascript: showCheerBoardForPerson(' + row.personId + '); void(0);">cheer board</a></td>';
+			//tr += '<td class="' + cssClass + '" align="center"><a href="javascript: showCheerBoardForPerson(' + row.personId + '); void(0);">cheer board</a></td>';
 			tr += '</tr>';
 
 			if (!splitByAge) {
