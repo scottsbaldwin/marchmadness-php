@@ -354,7 +354,8 @@ order by score desc, possibleScore desc, FM.birthDate asc
 			$row["score2012"] = $GLOBALS["scores2012"]["personId_".$myrow["personId"]];
 			$row["score2013"] = $GLOBALS["scores2013"]["personId_".$myrow["personId"]];
 			$row["score2014"] = $GLOBALS["scores2014"]["personId_".$myrow["personId"]];
-			$row["scoreAverage"] = round(($row["score2006"] + $row["score2007"] + $row["score2008"] + $row["score2009"] + $row["score2010"] + $row["score2011"] + $row["score2012"] + $row["score2013"] + $row["score2014"]) / 9);
+			$row["score2015"] = $GLOBALS["scores2015"]["personId_".$myrow["personId"]];
+			$row["scoreAverage"] = round(($row["score2006"] + $row["score2007"] + $row["score2008"] + $row["score2009"] + $row["score2010"] + $row["score2011"] + $row["score2012"] + $row["score2013"] + $row["score2014"] + $row["score2015"]) / 10);
 			
 			array_push($rowData, $row);
 		}
@@ -413,7 +414,7 @@ order by score desc, possibleScore desc, FM.birthDate asc
 		}
 
 		// Get the results from previous years
-		$years = array(2012, 2011, 2010, 2009, 2008, 2007, 2006);
+		$years = array(2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006);
 		$keyParts = explode("_", $gamekey);
 		$keyPrefix = $keyParts[0];
 		$lastYearsRows = "";

@@ -20,7 +20,7 @@ $personId = ($personId) ? $personId : $mm_personId;
 //$cutoff = mktime(12, 15, 0, 3, 21, 2013); // Server is EST
 //$cutoff = mktime(12, 15, 0, 3, 20, 2014); // Server is EST
 //$cutoff = mktime(12, 15, 0, 3, 19, 2015); // Server is EST
-$cutoff = mktime(23, 59, 59, 3, 19, 2015); // Server is EST
+$cutoff = mktime(12, 15, 0, 3, 17, 2016); // Server is EST
 
 /*
 if ($personId == 21) {
@@ -160,6 +160,7 @@ function buildGamePicksWindow(data) {
 	for(i=0;i<data.current.length;i++) {
 		var row = data.current[i];
 		var cssClass = i % 2 == 0 ? 'scoreCell' : 'scoreCellAlt';
+		// TODO: LOGO http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/[TEAM_ID].png&h=150&w=150
 		var logoImg = (row.teamid != null && row.teamid != '' && row.teamid != 0) ? '<div><img border="0" src="http://a.espncdn.com/i/teamlogos/ncaa/50x50/'+row.teamid+'.png"></div>' : '';
 		t += '<tr>';
 		t += '<td class="' + cssClass + '">' + row.teamname + logoImg + '</td>';

@@ -40,7 +40,7 @@ if ($_GET['gamekey']) {
 	// $cutoff = mktime(12, 20, 0, 3, 15, 2007); // Server is EST - 2007
 	// $cutoff = mktime(12, 25, 0, 3, 20, 2008); // Server is EST - 2008
 	//$cutoff = mktime(12, 20, 0, 3, 19, 2009); // Server is EST - 2008
-    $cutoff = mktime(12, 15, 0, 3, 19, 2015); // Server is EST
+	$cutoff = mktime(12, 15, 0, 3, 17, 2016); // Server is EST
 	$now = time();
 	$pastCutoff = $now >= $cutoff;
 	print $mmObj->getgamestats($_GET['gamekey'], $pastCutoff);

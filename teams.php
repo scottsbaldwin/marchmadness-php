@@ -726,7 +726,80 @@ $tabTeams2015 = "
 15	N Dakota St	23-9	2449	NDS
 
 ";
-$tabTeams = $tabTeams2015;
+
+// http://espn.go.com/ncb/clubhouse?teamId=2439
+// http://espn.go.com/mens-college-basketball/tournament/bracket
+$tabTeams2016 = "
+1	Kansas	30-4	2305	KANSAS
+16	Austin Peay	18-17	2046	
+8	Colorado	22-11	38	
+9	Connecticut	24-10	41	
+5	Maryland	25-8	120	
+12	S Dakota St	26-7	2571	
+4	Cal	23-10	25	
+13	Hawaii	27-5	62	
+6	Arizona	25-8	12	AZ
+11	??			
+3	Miami	25-7	2390	
+14	Buffalo	20-14	2084	
+7	Iowa	21-10	2294	
+10	Temple	21-11	218	
+2	Villanova	29-5	222	NOVA
+15	UNC Asheville	22-11	2427	
+
+1	Oregon	28-6	2483	OREG
+16	?			
+8	St Josephs	27-7	2603	
+9	Cincinnati	22-10	2132	CINCY
+5	Baylor	22-11	239	BAY
+12	Yale	22-6	43	
+4	Duke	23-10	150	DUKE
+13	UNC Wilmington	25-7	350	
+6	Texas	20-12	251	
+11	Northern Iowa	22-12	2460	NIA
+3	Texas AM	26-8	245	
+14	Green Bay	23-12	2739	
+7	Oregon St	19-12	204	
+10	VCU	24-10	2670	VACOMM
+2	Oklahoma	25-7	201	OKLA
+15	CSU Bakersfield	24-8	2934
+
+1	North Carolina	28-6	153	UNC
+16	?			
+8	USC	21-12	30	
+9	Providence	23-10	2507	PROV
+5	Indiana	25-7	84	IN
+12	Chattanooga	29-5	236	
+4	Kentucky	26-8	96	UK
+13	Stony Brook	26-6	2619	
+6	Notre Dame	21-11	87	ND
+11	?			
+3	West Virginia	26-8	277	WV
+14	SF Austin	27-5	2617	SFA
+7	Wisconsin	20-12	275	WISC
+10	Pittsburgh	21-11	221	
+2	Xavier	27-5	2752	XAVIER
+15	Weber St	26-8	2692		
+
+1	Virginia	26-7	258	UVA
+16	Hampton	21-10	2261	
+8	Texas Tech	19-12	2641	
+9	Butler	21-10	2086	BUT
+5	Purdue	26-8	2509	PUR
+12	AR Little Rock	29-4	2031	
+4	Iowa St	21-11	66	IOWAST
+13	Iona	22-10	314	
+6	Seton Hall	25-8	2550	
+11	Gonzaga	26-7	2250	
+3	Utah	26-8	254	UT
+14	Fresno St	25-9	278	
+7	Dayton	25-7	2168	DAY
+10	Syracuse	19-13	183	
+2	Michigan St	29-5	127	MIST
+15	Mid Tennessee	24-9	2393	
+
+";
+$tabTeams = $tabTeams2016;
 
 class Bracketology {
 	var $bracketTeams = array();
